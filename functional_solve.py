@@ -77,15 +77,13 @@ def available_in(region=34):
     return str(sorted(shops_with_good))
 
 
-def higest_ratio(region=34):
+def highest_ratio(region=34):
     """ выводит номер магазина с наибольщим кол-вом товара """
     region = str(region)
     search_in = json_file()
     available_shops = search_in['stock']['stocks'][region]
     max_quantity_in = [0, 0]
     for key, value in available_shops.items():
-        # pass
-        # print(int(value) > max_quantity_in[1] )
         if int(value) < max_quantity_in[1]:
             continue
         else:
